@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.container {
+    overflow: auto; /* Clearfix for floated elements */
+    padding: 10px; /* Optional padding */
+}
+
+.menu-item {
+    background-color: #ddd;
+    border: 1px solid black;
+    padding: 20px;
+    position: relative;
+    float: left; /* Use float for layout */
+    width: 33.33%; /* Equal width for desktop */
+    margin: 10px;
+}
+
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #aaa;
+    padding: 5px 10px;
+    border: 1px solid black;
+    color: white;
+}
+
+.menu-item:nth-child(1) .section-title {
+    background-color: #d6a5a5;
+}
+
+.menu-item:nth-child(2) .section-title {
+    background-color: #b05a5a;
+}
+
+.menu-item:nth-child(3) .section-title {
+    background-color: #e6c58a;
+}
+
+@media (min-width: 992px) {
+    .menu-item {
+        width: 30%; /* Each section takes up equal space on desktop */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .menu-item {
+        width: 50%; /* First two sections take half the width */
+    }
+
+    .menu-item:nth-child(3) {
+        width: 100%; /* Third section takes full width */
+        float: left; /* Ensure it's floated */
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-item {
+        width: 100%; /* Each section takes full width on mobile */
+        float: none; /* Remove float for mobile view */
+    }
+}
